@@ -27,7 +27,6 @@ public class CashbackHackServiceJUnit4Test {
         Assert.assertEquals(expected, actual);  // Этот тест также упадет
     }
 
-    // Тест ниже теперь тоже упадет, потому что метод always возвращает boundary
     @Test
     public void shouldFailTestIfAmountIs900() {
         CashbackHackService service = new CashbackHackService();
@@ -36,6 +35,6 @@ public class CashbackHackServiceJUnit4Test {
 
         int actual = service.remain(amount);
 
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);  // Этот тест не упадет
     }
 }
