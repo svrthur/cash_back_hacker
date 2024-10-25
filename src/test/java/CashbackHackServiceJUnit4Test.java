@@ -35,6 +35,6 @@ public class CashbackHackServiceJUnit4Test {
 
         int actual = service.remain(amount);
 
-        Assert.assertEquals(expected, actual);  // Этот тест не упадет
+        Assert.assertEquals(expected, actual);  // Этот тест тоже упадет
     }
 }

@@ -7,16 +7,16 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.testng:testng:7.1.0'
-    testImplementation 'junit:junit:4.13'
+    testImplementation 'junit:junit:4.13' // Зависимость для JUnit 4
+    testImplementation 'org.testng:testng:7.1.0' // Зависимость для TestNG, если требуется
 }
 
 test {
-    useTestNG()
+    useTestNG() // Этот блок запускает тесты с помощью TestNG
 }
 
 task testJUnit4(type: Test) {
-    useJUnit()
+    useJUnit() // Этот блок запускает тесты с помощью JUnit 4
     testClassesDirs = sourceSets.test.output.classesDirs
     classpath = sourceSets.test.runtimeClasspath
 }
