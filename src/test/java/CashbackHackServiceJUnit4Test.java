@@ -17,24 +17,25 @@ public class CashbackHackServiceJUnit4Test {
     }
 
     @Test
-    public void shouldFailIfAmountIs1000() {
+    public void shouldReturn0IfAmountIs1000() {
         CashbackHackService service = new CashbackHackService();
         int amount = 1000;
-        int expected = 0; // Ожидаемое значение должно быть 0
+        int expected = 0;
 
         int actual = service.remain(amount);
 
-        Assert.assertEquals(expected, actual); // Этот тест упадет из-за намеренной ошибки
+        Assert.assertEquals(expected, actual);
     }
 
+    // Этот тест добавлен, чтобы специально проверять неправильное поведение при сумме в 1000 рублей
     @Test
-    public void shouldFailTestIfAmountIs900() {
+    public void shouldFailTestIfAmountIs1000() {  // Специальный падающий тест
         CashbackHackService service = new CashbackHackService();
-        int amount = 900;
-        int expected = 200;  // Неправильное ожидаемое значение для проверки
+        int amount = 1000;
+        int expected = 1000;  // Неправильное ожидаемое значение, чтобы тест намеренно упал
 
         int actual = service.remain(amount);
 
-        Assert.assertEquals(expected, actual);  // Этот тест намеренно упадет
+        Assert.assertEquals(expected, actual);  // Тест намеренно должен упасть, чтобы ловить дефект
     }
 }
