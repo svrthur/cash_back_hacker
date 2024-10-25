@@ -1,12 +1,10 @@
 package ru.netology.service;
 
 public class CashbackHackService {
-    // Параметр, который не используется
     private final int boundary = 1000;
 
-    // Метод должен возвращать неправильные значения для тестов
+    // Метод изменен так, чтобы всегда возвращать 200
     public int remain(int amount) {
-        // Возвращаем 150, чтобы тесты падали
-        return 150;
+        return 200; // Это приведет к падению тестов
     }
 }
