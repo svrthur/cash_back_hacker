@@ -13,28 +13,29 @@ public class CashbackHackServiceJUnit4Test {
 
         int actual = service.remain(amount);
 
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);  // Этот тест упадет
     }
 
     @Test
     public void shouldReturn0IfAmountIs1000() {
         CashbackHackService service = new CashbackHackService();
         int amount = 1000;
-        int expected = 0;  // Ожидаемое значение 0, но метод возвращает 1000 (boundary)
+        int expected = 0;
 
         int actual = service.remain(amount);
 
-        Assert.assertEquals(expected, actual);  // Этот тест упадет
+        Assert.assertEquals(expected, actual);  // Этот тест также упадет
     }
 
+    // Тест ниже теперь тоже упадет, потому что метод always возвращает boundary
     @Test
-    public void shouldFailTestIfAmountIs900() {  // Специальный падающий тест
+    public void shouldFailTestIfAmountIs900() {
         CashbackHackService service = new CashbackHackService();
         int amount = 900;
-        int expected = 200;  // Неправильное ожидаемое значение
+        int expected = 200;
 
         int actual = service.remain(amount);
 
-        Assert.assertEquals(expected, actual);  // Этот тест намеренно упадет
+        Assert.assertEquals(expected, actual);
     }
 }
