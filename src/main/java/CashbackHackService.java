@@ -5,7 +5,7 @@ public class CashbackHackService {
 
     public int remain(int amount) {
         if (amount % boundary == 0) {
-            return boundary; // Намеренная ошибка
+            return 0; // Намеренная ошибка
         }
         return boundary - amount % boundary;
     }
