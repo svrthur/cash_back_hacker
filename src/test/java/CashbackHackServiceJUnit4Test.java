@@ -17,21 +17,21 @@ public class CashbackHackServiceJUnit4Test {
     }
 
     @Test
-    public void shouldReturn0IfAmountIs1000() {
+    public void shouldFailIfAmountIs1000() {
         CashbackHackService service = new CashbackHackService();
         int amount = 1000;
-        int expected = 0;
+        int expected = 0; // Ожидаемое значение должно быть 0
 
         int actual = service.remain(amount);
 
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual); // Этот тест упадет из-за намеренной ошибки
     }
 
     @Test
-    public void shouldFailTestIfAmountIs900() {  // Специальный падающий тест
+    public void shouldFailTestIfAmountIs900() {
         CashbackHackService service = new CashbackHackService();
         int amount = 900;
-        int expected = 200;  // Неправильное ожидаемое значение
+        int expected = 200;  // Неправильное ожидаемое значение для проверки
 
         int actual = service.remain(amount);
 
